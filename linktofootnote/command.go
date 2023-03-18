@@ -4,6 +4,7 @@ import (
 	"errors"
 
 	"github.com/AgileCraftsmanshipCanarias/kata-setup-go/io"
+	"github.com/AgileCraftsmanshipCanarias/kata-setup-go/markdown"
 )
 
 var (
@@ -22,7 +23,8 @@ func (c Command) Run(sourceFilepath, destinationFilepath string) error {
 	if c.fileSystem.FileExists(destinationFilepath) {
 		return DestinationFileAlreadyExistsErr
 	}
-	_ = c.fileSystem.ReadFile(sourceFilepath)
+	transformer := markdown.NewTransformer(c.fileSystem.ReadFile(sourceFilepath))
+	_ = transformer.Transform()
 	panic("not implemented")
 }
 
