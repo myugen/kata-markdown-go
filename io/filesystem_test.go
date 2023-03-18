@@ -81,7 +81,7 @@ func TestFileSystem_WriteFile(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			s := io.FileSystem{}
+			s := io.NewFileSystem()
 			tt.wantErr(t, s.WriteFile(tt.args.filepath, tt.args.text))
 		})
 	}
