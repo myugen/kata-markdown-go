@@ -35,3 +35,27 @@ func TestFileSystem_FileExists(t *testing.T) {
 		})
 	}
 }
+
+func TestFileSystem_ReadFile(t *testing.T) {
+	type args struct {
+		filepath string
+	}
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{
+			name: "should return the content of provided file",
+			args: args{"../testdata/test.md"},
+			want: "# Test file\n\nEl [libro de Código Sostenible](www.codigosostenible.com) es un librazo.\n¡Cómpralo!",
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			fileSystem := io.NewFileSystem()
+			got := fileSystem.ReadFile(tt.args.filepath)
+			assert.Equal(t, tt.want, got)
+		})
+	}
+}

@@ -22,6 +22,7 @@ func (c Command) Run(sourceFilepath, destinationFilepath string) error {
 	if c.fileSystem.FileExists(destinationFilepath) {
 		return DestinationFileAlreadyExistsErr
 	}
+	_ = c.fileSystem.ReadFile(sourceFilepath)
 	panic("not implemented")
 }
 
