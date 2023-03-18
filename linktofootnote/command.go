@@ -3,8 +3,8 @@ package linktofootnote
 import (
 	"errors"
 
-	"github.com/AgileCraftsmanshipCanarias/kata-setup-go/io"
-	"github.com/AgileCraftsmanshipCanarias/kata-setup-go/markdown"
+	"github.com/myugen/kata-markdown-go/io"
+	"github.com/myugen/kata-markdown-go/markdown"
 )
 
 var (

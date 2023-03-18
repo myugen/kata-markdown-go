@@ -3,7 +3,7 @@ package io_test
 import (
 	"testing"
 
-	"github.com/AgileCraftsmanshipCanarias/kata-setup-go/io"
+	"github.com/myugen/kata-markdown-go/io"
 	"github.com/stretchr/testify/assert"
 )
 

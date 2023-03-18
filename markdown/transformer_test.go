@@ -3,7 +3,7 @@ package markdown_test
 import (
 	"testing"
 
-	"github.com/AgileCraftsmanshipCanarias/kata-setup-go/markdown"
+	"github.com/myugen/kata-markdown-go/markdown"
 	"github.com/stretchr/testify/assert"
 )
 

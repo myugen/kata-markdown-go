@@ -4,8 +4,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/AgileCraftsmanshipCanarias/kata-setup-go/io"
-	"github.com/AgileCraftsmanshipCanarias/kata-setup-go/linktofootnote"
+	"github.com/myugen/kata-markdown-go/io"
+	"github.com/myugen/kata-markdown-go/linktofootnote"
 	"github.com/stretchr/testify/assert"
 )
 
