@@ -2,5 +2,5 @@ vendor/
 
 kata-setup-go
 main
-
-kata/mocks/
+link2footnote
+testdata/*.md
