@@ -59,3 +59,30 @@ func TestFileSystem_ReadFile(t *testing.T) {
 		})
 	}
 }
+
+func TestFileSystem_WriteFile(t *testing.T) {
+	type args struct {
+		filepath string
+		text     string
+	}
+	tests := []struct {
+		name    string
+		args    args
+		wantErr assert.ErrorAssertionFunc
+	}{
+		{
+			name: "should create new file with provided content",
+			args: args{
+				filepath: "../testdata/destination.md",
+				text:     "foo",
+			},
+			wantErr: nil,
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			s := io.FileSystem{}
+			tt.wantErr(t, s.WriteFile(tt.args.filepath, tt.args.text))
+		})
+	}
+}

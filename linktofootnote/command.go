@@ -24,8 +24,8 @@ func (c Command) Run(sourceFilepath, destinationFilepath string) error {
 		return DestinationFileAlreadyExistsErr
 	}
 	transformer := markdown.NewTransformer(c.fileSystem.ReadFile(sourceFilepath))
-	_ = transformer.Transform()
-	panic("not implemented")
+	transformedText := transformer.Transform()
+	return c.fileSystem.WriteFile(destinationFilepath, transformedText)
 }
 
 func NewCommand(fileSystem *io.FileSystem) *Command {

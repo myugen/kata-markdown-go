@@ -15,6 +15,10 @@ func (FileSystem) FileExists(filepath string) bool {
 	return err == nil
 }
 
+func (s FileSystem) WriteFile(filepath, text string) error {
+	return os.WriteFile(filepath, []byte(text), 0666)
+}
+
 func NewFileSystem() *FileSystem {
 	return &FileSystem{}
 }
